@@ -1,0 +1,7 @@
+employee_id,full_name,work_email,department,hire_date,contract_start_date
+001,Alice Johnson,alice@acme.com,Engineering,2021-03-15,2021-03-15
+002,Bob Smith,bob@acme.com,Sales,2020-07-01,
+003,Carol Díaz,carol@acme.com,Finance,2019-11-30,2019-12-01
+004,O'Brien Lee,obrien@acme.com,People Operations,2022-01-10,
+005,Éric Zhang,eric@acme.com,ENGINEERING,2023-02-28,
+006,Farah Noor,farah@acme.com,Sales,15 Mar 2024,

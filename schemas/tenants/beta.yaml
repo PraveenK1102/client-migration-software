@@ -1,0 +1,20 @@
+# Tenant custom-field SEED for the synthetic test tenant "beta".
+#
+# A custom field belongs to ONE tenant's configuration:  core schema + this tenant's definitions
+# = the effective target schema for this tenant's migrations. Another tenant (e.g. "gamma") has an
+# independent namespace and never sees or reuses these definitions.
+#
+# Seeds are loaded idempotently at startup (INSERT OR IGNORE on (tenant_id, key)); definitions
+# created later through the custom-field proposal workflow are persisted in the same table.
+# Synthetic data only.
+tenant_id: beta
+name: Beta Industries (synthetic test tenant)
+custom_fields:
+  - key: badge_colour
+    label: Badge Colour
+    type: enum
+    options: [Red, Blue, Green]
+    required: false
+    multi_value: false
+    aliases: [badge color, id badge colour]
+    description: Colour of the physical access badge (tenant-specific field; synthetic).

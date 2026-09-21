@@ -1,0 +1,107 @@
+{
+  "provenance": "SYNTHETIC. Canonical-header fixtures for the deterministic rules-first route + M2.",
+  "do_not_send_to_model": true,
+  "files": {
+    "canonical_clean.csv": {
+      "rows": 6,
+      "headers": [
+        "employee_id",
+        "full_name",
+        "work_email",
+        "department",
+        "hire_date",
+        "contract_start_date"
+      ],
+      "route": "rules_only_zero_model",
+      "expected": "all candidates eligible"
+    },
+    "canonical_messy.csv": {
+      "rows": 14,
+      "headers": [
+        "employee_id",
+        "full_name",
+        "work_email",
+        "department",
+        "hire_date",
+        "contract_start_date"
+      ],
+      "route": "rules_only_zero_model"
+    },
+    "canonical_large.csv": {
+      "rows": 30,
+      "headers": [
+        "employee_id",
+        "full_name",
+        "work_email",
+        "department",
+        "hire_date",
+        "contract_start_date"
+      ],
+      "note": "impossible date at row 25 (beyond the 5-value sample window)"
+    }
+  },
+  "canonical_messy_expected_m2": [
+    {
+      "employee_id": "010",
+      "case": "ambiguous_date",
+      "field": "hire_date",
+      "raw": "03/04/2024"
+    },
+    {
+      "employee_id": "011",
+      "case": "unambiguous_numeric_date",
+      "field": "hire_date",
+      "iso": "2024-04-13"
+    },
+    {
+      "employee_id": "012",
+      "case": "impossible_date",
+      "field": "hire_date",
+      "raw": "31/02/2024"
+    },
+    {
+      "employee_id": "013",
+      "case": "missing_required",
+      "field": "work_email"
+    },
+    {
+      "employee_id": [
+        "014",
+        "015"
+      ],
+      "case": "shared_email",
+      "value": "shared@acme.com"
+    },
+    {
+      "employee_id": "016",
+      "case": "unknown_enum",
+      "field": "department",
+      "raw": "Marketing"
+    },
+    {
+      "employee_id": "017",
+      "case": "exact_duplicate_collapse"
+    },
+    {
+      "employee_id": "018",
+      "case": "optional_department_null_ok"
+    },
+    {
+      "employee_id": "019",
+      "case": "value_conflict",
+      "field": "full_name"
+    },
+    {
+      "employee_id": "020",
+      "case": "complementary_merge",
+      "fields": [
+        "full_name",
+        "work_email"
+      ]
+    }
+  ],
+  "canonical_large_expected_m2": {
+    "employee_id": "0125",
+    "case": "impossible_date_beyond_sample"
+  }
+}

@@ -1,0 +1,59 @@
+# --- secrets & env ---
+.env
+.env.*
+!.env.example
+!*.env.example
+backend/.env
+
+# --- runtime data (SQLite app db + LangGraph checkpoints + mock target + blobs/uploads) ---
+# The app creates these on first run; only an empty data/ placeholder is tracked.
+data/*
+!data/.gitkeep
+backend/data/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# --- python ---
+__pycache__/
+*.py[cod]
+.venv/
+backend/.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+.coverage
+coverage/
+htmlcov/
+
+# --- node / frontend ---
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+dist/
+build/
+
+# --- generated bundles / archives (never committed) ---
+artifacts/
+*.zip
+blind_packages/
+backend/blind_packages/
+backend/scripts/blind_stress_result.json
+
+# --- logs / temp ---
+*.log
+logs/
+tmp/
+temp/
+
+# --- local AI-assistant / editor tooling ---
+.claude/
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.tsbuildinfo

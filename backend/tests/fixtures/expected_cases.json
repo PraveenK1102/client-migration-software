@@ -1,0 +1,193 @@
+{
+  "schema_version": "employee.v1",
+  "provenance": "SYNTHETIC development/demo data. NOT real client data.",
+  "do_not_send_to_model": true,
+  "files": {
+    "legacy_hr.csv": {
+      "rows": 12,
+      "headers": [
+        "EmployeeNumber",
+        "Full Name",
+        "Work Email",
+        "Department",
+        "Joined"
+      ]
+    },
+    "employee_export.xlsx": {
+      "Employees": {
+        "rows": 10,
+        "headers": [
+          "Emp ID",
+          "Full Name",
+          "Work Email",
+          "Team",
+          "Start"
+        ]
+      },
+      "Contractors": {
+        "rows": 4,
+        "headers": [
+          "Emp ID",
+          "Full Name",
+          "Work Email",
+          "Team",
+          "Contract Start"
+        ]
+      }
+    }
+  },
+  "counts": {
+    "total_source_rows": 26,
+    "total_source_tables": 3
+  },
+  "expected_mapping": {
+    "auto_accept": [
+      {
+        "file": "legacy_hr.csv",
+        "header": "EmployeeNumber",
+        "target": "employee_id"
+      },
+      {
+        "file": "legacy_hr.csv",
+        "header": "Full Name",
+        "target": "full_name"
+      },
+      {
+        "file": "legacy_hr.csv",
+        "header": "Work Email",
+        "target": "work_email"
+      },
+      {
+        "file": "legacy_hr.csv",
+        "header": "Department",
+        "target": "department"
+      },
+      {
+        "file": "legacy_hr.csv",
+        "header": "Joined",
+        "target": "hire_date"
+      },
+      {
+        "file": "employee_export.xlsx",
+        "sheet": "Employees",
+        "header": "Emp ID",
+        "target": "employee_id"
+      },
+      {
+        "file": "employee_export.xlsx",
+        "sheet": "Employees",
+        "header": "Full Name",
+        "target": "full_name"
+      },
+      {
+        "file": "employee_export.xlsx",
+        "sheet": "Employees",
+        "header": "Work Email",
+        "target": "work_email"
+      },
+      {
+        "file": "employee_export.xlsx",
+        "sheet": "Employees",
+        "header": "Team",
+        "target": "department"
+      },
+      {
+        "file": "employee_export.xlsx",
+        "sheet": "Contractors",
+        "header": "Emp ID",
+        "target": "employee_id"
+      },
+      {
+        "file": "employee_export.xlsx",
+        "sheet": "Contractors",
+        "header": "Full Name",
+        "target": "full_name"
+      },
+      {
+        "file": "employee_export.xlsx",
+        "sheet": "Contractors",
+        "header": "Work Email",
+        "target": "work_email"
+      },
+      {
+        "file": "employee_export.xlsx",
+        "sheet": "Contractors",
+        "header": "Team",
+        "target": "department"
+      },
+      {
+        "file": "employee_export.xlsx",
+        "sheet": "Contractors",
+        "header": "Contract Start",
+        "target": "contract_start_date"
+      }
+    ],
+    "needs_review": [
+      {
+        "file": "employee_export.xlsx",
+        "sheet": "Employees",
+        "header": "Start",
+        "reason": "date_role_ambiguity",
+        "candidates": [
+          "hire_date",
+          "contract_start_date"
+        ],
+        "note": "Genuine M1 escalation: 'Start' is ambiguous between hire_date and contract_start_date; date-like values alone cannot decide."
+      }
+    ],
+    "unmapped": []
+  },
+  "expected_cleanup_next_milestone": [
+    {
+      "kind": "leading_zero_identifier",
+      "example": "001",
+      "where": "both files Emp ID/EmployeeNumber",
+      "expectation": "preserve as string; never coerce to int"
+    },
+    {
+      "kind": "ambiguous_slash_date_value",
+      "example": "03/04/2024",
+      "where": "legacy_hr.csv Joined row for id 004",
+      "expectation": "flag; do not silently normalize without a declared convention"
+    },
+    {
+      "kind": "exact_duplicate_row",
+      "where": "legacy_hr.csv id 001 appears twice identically"
+    },
+    {
+      "kind": "complementary_records",
+      "where": "id 001/002/003 appear in both files"
+    },
+    {
+      "kind": "conflicting_value",
+      "where": "id 002 department differs (Sales vs Marketing)"
+    },
+    {
+      "kind": "out_of_enum_value",
+      "example": "Marketing",
+      "where": "legacy_hr.csv id 002 duplicate"
+    },
+    {
+      "kind": "shared_email_across_ids",
+      "example": "shared.email@acme.com",
+      "where": "File A id 010 and File B id 014"
+    },
+    {
+      "kind": "missing_required_value",
+      "where": "legacy_hr.csv id 007 has empty Mail (work_email)"
+    },
+    {
+      "kind": "whitespace_in_name",
+      "where": "legacy_hr.csv id 008 '  Henry  Ford  '"
+    },
+    {
+      "kind": "department_casing",
+      "where": "legacy_hr.csv 'engineering'/'SALES'"
+    },
+    {
+      "kind": "instruction_like_cell",
+      "where": "legacy_hr.csv id 009 Full Name contains instruction-like text",
+      "expectation": "treated as DATA, never executed as an instruction"
+    }
+  ]
+}

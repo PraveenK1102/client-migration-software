@@ -1,0 +1,8 @@
+Employee Number,Employee Name,Work Email Address,Dept,Date of Joining,Contract Start
+100,Ada Existing,ada@corp.com,Engineering,2019-01-01,
+200,Bob Existing,bob@corp.com,,2020-02-02,
+400,Dave Existing,erin@corp.com,Finance,2017-04-04,
+500,Grace New,grace.new@corp.com,Sales,2024-01-15,
+600,Sam Ambiguous,sam@corp.com,Engineering,03/04/2024,
+700,Nina Duplicate,nina@corp.com,Sales,2022-09-01,
+800,Liam Conflict,liam@corp.com,Sales,2021-10-10,

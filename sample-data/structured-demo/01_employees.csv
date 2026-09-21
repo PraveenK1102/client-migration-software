@@ -1,0 +1,5 @@
+Employee ID,Full Name,Work Email,Department,Hire Date,Employment Type,Designation,Mobile Phone,Badge Colour,T-Shirt Size,Legacy Payroll Code
+E100,Priya Sharma,priya.sharma@beta.example,Engineering,2021-02-15,Full Time,Senior Engineer,+91 98765 43210,Blue,M,P-1001
+E101,Arjun Mehta,arjun.mehta@beta.example,Sales,2020-08-03,Full Time,Account Manager,+91 98765 43211,Red,L,P-1002
+E102,Meera Nair,meera.nair@beta.example,Finance,2022-11-21,Part Time,Analyst,+91 98765 43212,Green,XL,P-1003
+E103,Rahul Verma,rahul.verma@beta.example,Sales,2019-06-17,Full Time,Analyst,+91 98765 43213,Blue,M,P-1004

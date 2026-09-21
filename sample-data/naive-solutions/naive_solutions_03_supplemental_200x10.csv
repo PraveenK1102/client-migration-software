@@ -1,0 +1,201 @@
+employee_id,Separation Effective Date,personal_email,Personal Contact Number,Office Telephone Number,Department Name,Employee Status,Worker Type,Office Location,Parking Access Zone
+NS-0001,,,+91-9100000001,,Engineering,active,full_time,Bengaluru,
+NS-0002,,nila.ns0002@personal.example,+91-9100000002,,Sales,on_leave,part_time,Chennai,
+NS-0003,,,,,Finance,notice_period,contractor,Hyderabad,
+NS-0004,,yash.ns0004@personal.example,+91-9100000004,,People Operations,active,intern,Pune,Zone B
+NS-0005,,,+91-9100000005,080-40000005,Engineering,on_leave,temporary,Bengaluru,
+NS-0006,,aditi.ns0006@personal.example,,,Sales,notice_period,full_time,Chennai,
+NS-0007,,,+91-9100000007,,Finance,active,part_time,Hyderabad,
+NS-0008,,pooja.ns0008@personal.example,+91-9100000008,,People Operations,on_leave,contractor,Pune,Zone C
+NS-0009,,,,,Engineering,notice_period,intern,Bengaluru,
+NS-0010,,anika.ns0010@personal.example,+91-9100000010,080-40000010,Sales,active,temporary,Chennai,
+NS-0011,,,+91-9100000011,,Finance,on_leave,full_time,Hyderabad,
+NS-0012,,akash.ns0012@personal.example,,,People Operations,notice_period,part_time,Pune,Zone A
+NS-0013,,,+91-9100000013,,Engineering,active,contractor,Bengaluru,
+NS-0014,,rahul.ns0014@personal.example,+91-9100000014,,Sales,on_leave,intern,Chennai,
+NS-0015,,,,080-40000015,Finance,notice_period,temporary,Hyderabad,
+NS-0016,,gauri.ns0016@personal.example,+91-9100000016,,People Operations,active,full_time,Pune,Zone B
+NS-0017,,,+91-9100000017,,Engineering,on_leave,part_time,Bengaluru,
+NS-0018,,arjun.ns0018@personal.example,,,Sales,notice_period,contractor,Chennai,
+NS-0019,,,+91-9100000019,,Finance,active,intern,Hyderabad,
+NS-0020,,rohan.ns0020@personal.example,+91-9100000020,080-40000020,People Operations,on_leave,temporary,Pune,Zone C
+NS-0021,,,,,Engineering,notice_period,full_time,Bengaluru,
+NS-0022,,janani.ns0022@personal.example,+91-9100000022,,Sales,active,part_time,Chennai,
+NS-0023,,,+91-9100000023,,Finance,on_leave,contractor,Hyderabad,
+NS-0024,,diya.ns0024@personal.example,,,People Operations,notice_period,intern,Pune,Zone A
+NS-0025,,,+91-9100000025,080-40000025,Engineering,active,temporary,Bengaluru,
+NS-0026,,sanjay.ns0026@personal.example,+91-9100000026,,Sales,on_leave,full_time,Chennai,
+NS-0027,,,,,Finance,notice_period,part_time,Hyderabad,
+NS-0028,,lakshmi.ns0028@personal.example,+91-9100000028,,People Operations,active,contractor,Pune,Zone B
+NS-0029,,,+91-9100000029,,Engineering,on_leave,intern,Bengaluru,
+NS-0030,,ishaan.ns0030@personal.example,,080-40000030,Sales,notice_period,temporary,Chennai,
+NS-0031,,,+91-9100000031,,Finance,active,full_time,Hyderabad,
+NS-0032,,tara.ns0032@personal.example,+91-9100000032,,People Operations,on_leave,part_time,Pune,Zone C
+NS-0033,,,,,Engineering,notice_period,contractor,Bengaluru,
+NS-0034,,naveen.ns0034@personal.example,+91-9100000034,,Sales,active,intern,Chennai,
+NS-0035,,,+91-9100000035,080-40000035,Finance,on_leave,temporary,Hyderabad,
+NS-0036,,kavya.ns0036@personal.example,,,People Operations,notice_period,full_time,Pune,Zone A
+NS-0037,,,+91-9100000037,,Engineering,active,part_time,Bengaluru,
+NS-0038,,vikram.ns0038@personal.example,+91-9100000038,,Sales,on_leave,contractor,Chennai,
+NS-0039,,,,,Finance,notice_period,intern,Hyderabad,
+NS-0040,,aadhya.ns0040@personal.example,+91-9100000040,080-40000040,People Operations,active,temporary,Pune,Zone B
+NS-0041,,,+91-9100000041,,Engineering,on_leave,full_time,Bengaluru,
+NS-0042,,nila.ns0042@personal.example,,,Sales,notice_period,part_time,Chennai,
+NS-0043,,,+91-9100000043,,Finance,active,contractor,Hyderabad,
+NS-0044,,yash.ns0044@personal.example,+91-9100000044,,People Operations,on_leave,intern,Pune,Zone C
+NS-0045,,,,080-40000045,Engineering,notice_period,temporary,Bengaluru,
+NS-0046,,aditi.ns0046@personal.example,+91-9100000046,,Sales,active,full_time,Chennai,
+NS-0047,,,+91-9100000047,,Finance,on_leave,part_time,Hyderabad,
+NS-0048,,pooja.ns0048@personal.example,,,People Operations,notice_period,contractor,Pune,Zone A
+NS-0049,,,+91-9100000049,,Engineering,active,intern,Bengaluru,
+NS-0050,2023-03-17,anika.ns0050@personal.example,+91-9100000050,080-40000050,Sales,terminated,temporary,Chennai,
+NS-0051,,,,,Finance,notice_period,full_time,Hyderabad,
+NS-0052,,akash.ns0052@personal.example,+91-9100000052,,People Operations,active,part_time,Pune,Zone B
+NS-0053,,,+91-9100000053,,Engineering,on_leave,contractor,Bengaluru,
+NS-0054,,rahul.ns0054@personal.example,,,Sales,notice_period,intern,Chennai,
+NS-0055,,,+91-9100000055,080-40000055,Finance,active,temporary,Hyderabad,
+NS-0056,,gauri.ns0056@personal.example,+91-9100000056,,People Operations,on_leave,full_time,Pune,Zone C
+NS-0057,,,,,Engineering,notice_period,part_time,Bengaluru,
+NS-0058,,arjun.ns0058@personal.example,+91-9100000058,,Sales,active,contractor,Chennai,
+NS-0059,,,+91-9100000059,,Finance,on_leave,intern,Hyderabad,
+NS-0060,,rohan.ns0060@personal.example,,080-40000060,People Operations,notice_period,temporary,Pune,Zone A
+NS-0061,,,+91-9100000061,,Engineering,active,full_time,Bengaluru,
+NS-0062,,janani.ns0062@personal.example,+91-9100000062,,Sales,on_leave,part_time,Chennai,
+NS-0063,,,,,Finance,notice_period,contractor,Hyderabad,
+NS-0064,,diya.ns0064@personal.example,+91-9100000064,,People Operations,active,intern,Pune,Zone B
+NS-0065,,,+91-9100000065,080-40000065,Engineering,on_leave,temporary,Bengaluru,
+NS-0066,,sanjay.ns0066@personal.example,,,Sales,notice_period,full_time,Chennai,
+NS-0067,,,+91-9100000067,,Finance,active,part_time,Hyderabad,
+NS-0068,,lakshmi.ns0068@personal.example,+91-9100000068,,People Operations,on_leave,contractor,Pune,Zone C
+NS-0069,,,,,Engineering,notice_period,intern,Bengaluru,
+NS-0070,,ishaan.ns0070@personal.example,+91-9100000070,080-40000070,Sales,active,temporary,Chennai,
+NS-0071,,,+91-9100000071,,Finance,on_leave,full_time,Hyderabad,
+NS-0072,,tara.ns0072@personal.example,,,People Operations,notice_period,part_time,Pune,Zone A
+NS-0073,,,+91-9100000073,,Engineering,active,contractor,Bengaluru,
+NS-0074,,naveen.ns0074@personal.example,+91-9100000074,,Sales,on_leave,intern,Chennai,
+NS-0075,,,,080-40000075,Finance,notice_period,temporary,Hyderabad,
+NS-0076,,kavya.ns0076@personal.example,+91-9100000076,,People Operations,active,full_time,Pune,Zone B
+NS-0077,,,+91-9100000077,,Engineering,on_leave,part_time,Bengaluru,
+NS-0078,,vikram.ns0078@personal.example,,,Sales,notice_period,contractor,Chennai,
+NS-0079,,,+91-9100000079,,Finance,active,intern,Hyderabad,
+NS-0080,,aadhya.ns0080@personal.example,+91-9100000080,080-40000080,People Operations,on_leave,temporary,Pune,Zone C
+NS-0081,,,,,Engineering,notice_period,full_time,Bengaluru,
+NS-0082,,nila.ns0082@personal.example,+91-9100000082,,Sales,active,part_time,Chennai,
+NS-0083,,,+91-9100000083,,Finance,on_leave,contractor,Hyderabad,
+NS-0084,,yash.ns0084@personal.example,,,People Operations,notice_period,intern,Pune,Zone A
+NS-0085,,,+91-9100000085,080-40000085,Engineering,active,temporary,Bengaluru,
+NS-0086,,aditi.ns0086@personal.example,+91-9100000086,,Sales,on_leave,full_time,Chennai,
+NS-0087,,,,,Finance,notice_period,part_time,Hyderabad,
+NS-0088,,pooja.ns0088@personal.example,+91-9100000088,,People Operations,active,contractor,Pune,Zone B
+NS-0089,,,+91-9100000089,,Engineering,on_leave,intern,Bengaluru,
+NS-0090,,anika.ns0090@personal.example,,080-40000090,Sales,notice_period,temporary,Chennai,
+NS-0091,,,+91-9100000091,,Finance,active,full_time,Hyderabad,
+NS-0092,,akash.ns0092@personal.example,+91-9100000092,,People Operations,on_leave,part_time,Pune,Zone C
+NS-0093,,,,,Engineering,notice_period,contractor,Bengaluru,
+NS-0094,,rahul.ns0094@personal.example,+91-9100000094,,Sales,active,intern,Chennai,
+NS-0095,,,+91-9100000095,080-40000095,Finance,on_leave,temporary,Hyderabad,
+NS-0096,,gauri.ns0096@personal.example,,,People Operations,notice_period,full_time,Pune,Zone A
+NS-0097,,,+91-9100000097,,Engineering,active,part_time,Bengaluru,
+NS-0098,,arjun.ns0098@personal.example,+91-9100000098,,Sales,on_leave,contractor,Chennai,
+NS-0099,,,,,Finance,notice_period,intern,Hyderabad,
+NS-0100,2020-03-12,rohan.ns0100@personal.example,+91-9100000100,080-40000100,People Operations,terminated,temporary,Pune,Zone B
+NS-0101,,,+91-9100000101,,Engineering,on_leave,full_time,Bengaluru,
+NS-0102,,janani.ns0102@personal.example,,,Sales,notice_period,part_time,Chennai,
+NS-0103,,,+91-9100000103,,Finance,active,contractor,Hyderabad,
+NS-0104,,diya.ns0104@personal.example,+91-9100000104,,People Operations,on_leave,intern,Pune,Zone C
+NS-0105,,,,080-40000105,Engineering,notice_period,temporary,Bengaluru,
+NS-0106,,sanjay.ns0106@personal.example,+91-9100000106,,Sales,active,full_time,Chennai,
+NS-0107,,,+91-9100000107,,Finance,on_leave,part_time,Hyderabad,
+NS-0108,,lakshmi.ns0108@personal.example,,,People Operations,notice_period,contractor,Pune,Zone A
+NS-0109,,,+91-9100000109,,Engineering,active,intern,Bengaluru,
+NS-0110,,ishaan.ns0110@personal.example,+91-9100000110,080-40000110,Sales,on_leave,temporary,Chennai,
+NS-0111,,,,,Finance,notice_period,full_time,Hyderabad,
+NS-0112,,tara.ns0112@personal.example,+91-9100000112,,People Operations,active,part_time,Pune,Zone B
+NS-0113,,,+91-9100000113,,Engineering,on_leave,contractor,Bengaluru,
+NS-0114,,naveen.ns0114@personal.example,,,Sales,notice_period,intern,Chennai,
+NS-0115,,,+91-9100000115,080-40000115,Finance,active,temporary,Hyderabad,
+NS-0116,,kavya.ns0116@personal.example,+91-9100000116,,People Operations,on_leave,full_time,Pune,Zone C
+NS-0117,,,,,Engineering,notice_period,part_time,Bengaluru,
+NS-0118,,vikram.ns0118@personal.example,+91-9100000118,,Sales,active,contractor,Chennai,
+NS-0119,,,+91-9100000119,,Finance,on_leave,intern,Hyderabad,
+NS-0120,,aadhya.ns0120@personal.example,,080-40000120,People Operations,notice_period,temporary,Pune,Zone A
+NS-0121,,,+91-9100000121,,Engineering,active,full_time,Bengaluru,
+NS-0122,,nila.ns0122@personal.example,+91-9100000122,,Sales,on_leave,part_time,Chennai,
+NS-0123,,,,,Finance,notice_period,contractor,Hyderabad,
+NS-0124,,yash.ns0124@personal.example,+91-9100000124,,People Operations,active,intern,Pune,Zone B
+NS-0125,,,+91-9100000125,080-40000125,Engineering,on_leave,temporary,Bengaluru,
+NS-0126,,aditi.ns0126@personal.example,,,Sales,notice_period,full_time,Chennai,
+NS-0127,,,+91-9100000127,,Finance,active,part_time,Hyderabad,
+NS-0128,,pooja.ns0128@personal.example,+91-9100000128,,People Operations,on_leave,contractor,Pune,Zone C
+NS-0129,,,,,Engineering,notice_period,intern,Bengaluru,
+NS-0130,,anika.ns0130@personal.example,+91-9100000130,080-40000130,Sales,active,temporary,Chennai,
+NS-0131,,,+91-9100000131,,Finance,on_leave,full_time,Hyderabad,
+NS-0132,,akash.ns0132@personal.example,,,People Operations,notice_period,part_time,Pune,Zone A
+NS-0133,,,+91-9100000133,,Engineering,active,contractor,Bengaluru,
+NS-0134,,rahul.ns0134@personal.example,+91-9100000134,,Sales,on_leave,intern,Chennai,
+NS-0135,,,,080-40000135,Finance,notice_period,temporary,Hyderabad,
+NS-0136,,gauri.ns0136@personal.example,+91-9100000136,,People Operations,active,full_time,Pune,Zone B
+NS-0137,,,+91-9100000137,,Engineering,on_leave,part_time,Bengaluru,
+NS-0138,,arjun.ns0138@personal.example,,,Sales,notice_period,contractor,Chennai,
+NS-0139,,,+91-9100000139,,Finance,active,intern,Hyderabad,
+NS-0140,,rohan.ns0140@personal.example,+91-9100000140,080-40000140,People Operations,on_leave,temporary,Pune,Zone C
+NS-0141,,,,,Engineering,notice_period,full_time,Bengaluru,
+NS-0142,,janani.ns0142@personal.example,+91-9100000142,,Sales,active,part_time,Chennai,
+NS-0143,,,+91-9100000143,,Finance,on_leave,contractor,Hyderabad,
+NS-0144,,diya.ns0144@personal.example,,,People Operations,notice_period,intern,Pune,Zone A
+NS-0145,,,+91-9100000145,080-40000145,Engineering,active,temporary,Bengaluru,
+NS-0146,,sanjay.ns0146@personal.example,+91-9100000146,,Sales,on_leave,full_time,Chennai,
+NS-0147,,,,,Finance,notice_period,part_time,Hyderabad,
+NS-0148,,lakshmi.ns0148@personal.example,+91-9100000148,,People Operations,active,contractor,Pune,Zone B
+NS-0149,,,+91-9100000149,,Engineering,on_leave,intern,Bengaluru,
+NS-0150,2025-05-25,ishaan.ns0150@personal.example,,080-40000150,Sales,terminated,temporary,Chennai,
+NS-0151,,,+91-9100000151,,Finance,active,full_time,Hyderabad,
+NS-0152,,tara.ns0152@personal.example,+91-9100000152,,People Operations,on_leave,part_time,Pune,Zone C
+NS-0153,,,,,Engineering,notice_period,contractor,Bengaluru,
+NS-0154,,naveen.ns0154@personal.example,+91-9100000154,,Sales,active,intern,Chennai,
+NS-0155,,,+91-9100000155,080-40000155,Finance,on_leave,temporary,Hyderabad,
+NS-0156,,kavya.ns0156@personal.example,,,People Operations,notice_period,full_time,Pune,Zone A
+NS-0157,,,+91-9100000157,,Engineering,active,part_time,Bengaluru,
+NS-0158,,vikram.ns0158@personal.example,+91-9100000158,,Sales,on_leave,contractor,Chennai,
+NS-0159,,,,,Finance,notice_period,intern,Hyderabad,
+NS-0160,,aadhya.ns0160@personal.example,+91-9100000160,080-40000160,People Operations,active,temporary,Pune,Zone B
+NS-0161,,,+91-9100000161,,Engineering,on_leave,full_time,Bengaluru,
+NS-0162,,nila.ns0162@personal.example,,,Sales,notice_period,part_time,Chennai,
+NS-0163,,,+91-9100000163,,Finance,active,contractor,Hyderabad,
+NS-0164,,yash.ns0164@personal.example,+91-9100000164,,People Operations,on_leave,intern,Pune,Zone C
+NS-0165,,,,080-40000165,Engineering,notice_period,temporary,Bengaluru,
+NS-0166,,aditi.ns0166@personal.example,+91-9100000166,,Sales,active,full_time,Chennai,
+NS-0167,,,+91-9100000167,,Finance,on_leave,part_time,Hyderabad,
+NS-0168,,pooja.ns0168@personal.example,,,People Operations,notice_period,contractor,Pune,Zone A
+NS-0169,,,+91-9100000169,,Engineering,active,intern,Bengaluru,
+NS-0170,,anika.ns0170@personal.example,+91-9100000170,080-40000170,Sales,on_leave,temporary,Chennai,
+NS-0171,,,,,Finance,notice_period,full_time,Hyderabad,
+NS-0172,,akash.ns0172@personal.example,+91-9100000172,,People Operations,active,part_time,Pune,Zone B
+NS-0173,,,+91-9100000173,,Engineering,on_leave,contractor,Bengaluru,
+NS-0174,,rahul.ns0174@personal.example,,,Sales,notice_period,intern,Chennai,
+NS-0175,,,+91-9100000175,080-40000175,Finance,active,temporary,Hyderabad,
+NS-0176,,gauri.ns0176@personal.example,+91-9100000176,,People Operations,on_leave,full_time,Pune,Zone C
+NS-0177,,,,,Engineering,notice_period,part_time,Bengaluru,
+NS-0178,,arjun.ns0178@personal.example,+91-9100000178,,Sales,active,contractor,Chennai,
+NS-0179,,,+91-9100000179,,Finance,on_leave,intern,Hyderabad,
+NS-0180,,rohan.ns0180@personal.example,,080-40000180,People Operations,notice_period,temporary,Pune,Zone A
+NS-0181,,,+91-9100000181,,Engineering,active,full_time,Bengaluru,
+NS-0182,,janani.ns0182@personal.example,+91-9100000182,,Sales,on_leave,part_time,Chennai,
+NS-0183,,,,,Finance,notice_period,contractor,Hyderabad,
+NS-0184,,diya.ns0184@personal.example,+91-9100000184,,People Operations,active,intern,Pune,Zone B
+NS-0185,,,+91-9100000185,080-40000185,Engineering,on_leave,temporary,Bengaluru,
+NS-0186,,sanjay.ns0186@personal.example,,,Sales,notice_period,full_time,Chennai,
+NS-0187,,,+91-9100000187,,Finance,active,part_time,Hyderabad,
+NS-0188,,lakshmi.ns0188@personal.example,+91-9100000188,,People Operations,on_leave,contractor,Pune,Zone C
+NS-0189,,,,,Engineering,notice_period,intern,Bengaluru,
+NS-0190,,ishaan.ns0190@personal.example,+91-9100000190,080-40000190,Sales,active,temporary,Chennai,
+NS-0191,,,+91-9100000191,,Finance,on_leave,full_time,Hyderabad,
+NS-0192,,tara.ns0192@personal.example,,,People Operations,notice_period,part_time,Pune,Zone A
+NS-0193,,,+91-9100000193,,Engineering,active,contractor,Bengaluru,
+NS-0194,,naveen.ns0194@personal.example,+91-9100000194,,Sales,on_leave,intern,Chennai,
+NS-0195,,,,080-40000195,Finance,notice_period,temporary,Hyderabad,
+NS-0196,,kavya.ns0196@personal.example,+91-9100000196,,People Operations,active,full_time,Pune,Zone B
+NS-0197,,,+91-9100000197,,Engineering,on_leave,part_time,Bengaluru,
+NS-0198,,vikram.ns0198@personal.example,,,Sales,notice_period,contractor,Chennai,
+NS-0199,,,+91-9100000199,,Finance,active,intern,Hyderabad,
+NS-0200,2022-05-21,aadhya.ns0200@personal.example,+91-9100000200,080-40000200,People Operations,terminated,temporary,Pune,Zone C

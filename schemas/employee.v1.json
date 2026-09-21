@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "employee.v1",
+  "title": "Employee (target schema v1)",
+  "version": "employee.v1",
+  "description": "Milestone-1 target contract. The mapping engine reads field names, descriptions, types and constraints from this file. It is deliberately separate from application code and is NOT a source-header dictionary: it never lists which source columns map where.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "employee_id": {
+      "type": "string",
+      "description": "Client employee identifier. Non-empty string; preserve leading zeros; eventual canonical identity key.",
+      "x-value-type": "string",
+      "x-disambiguation-keywords": ["employee", "emp", "id", "identifier", "number", "no", "code", "staff", "payroll"],
+      "x-aliases": ["employee number", "employee code", "staff id"]
+    },
+    "full_name": {
+      "type": "string",
+      "description": "Employee display / full name. Preserve the name as a whole; do not guess first/last-name boundaries.",
+      "x-value-type": "string",
+      "x-disambiguation-keywords": ["full", "name", "fullname", "employee name", "display name"],
+      "x-aliases": ["employee name"]
+    },
+    "work_email": {
+      "type": "string",
+      "format": "email",
+      "description": "Work email address; eventual uniqueness check. Do not invent missing addresses.",
+      "x-value-type": "email",
+      "x-disambiguation-keywords": ["work", "email", "e-mail", "mail", "mailid", "email address"],
+      "x-aliases": ["work email address"]
+    },
+    "department": {
+      "type": ["string", "null"],
+      "description": "Optional. Null or one of the allowed departments. Casing/whitespace differences are cleanup (a later milestone), not a mapping blocker.",
+      "enum": ["Engineering", "Sales", "Finance", "People Operations", null],
+      "x-value-type": "enum",
+      "x-disambiguation-keywords": ["department", "dept", "team", "division", "group", "function"],
+      "x-aliases": ["dept"]
+    },
+    "hire_date": {
+      "type": "string",
+      "description": "Date employment with the company began; eventual normalized form YYYY-MM-DD.",
+      "x-value-type": "date",
+      "x-disambiguation-keywords": ["hire", "hired", "hiring", "join", "joined", "joining", "doj", "onboard", "onboarding", "date of joining", "employment"],
+      "x-aliases": ["hire date", "date of hire", "date of joining", "joining date"]
+    },
+    "contract_start_date": {
+      "type": ["string", "null"],
+      "description": "Optional. Date a contract began; distinct from employment hire date; nullable.",
+      "x-value-type": "date",
+      "x-disambiguation-keywords": ["contract", "agreement", "contract start", "contract begin"],
+      "x-aliases": ["contract start", "contract start date", "contract begin date"]
+    }
+  },
+  "required": ["employee_id", "full_name", "work_email", "hire_date"],
+  "x-business-rules": {
+    "required-in-final-record": ["employee_id", "full_name", "work_email", "hire_date"],
+    "nullable-fields": ["department", "contract_start_date"],
+    "date-role-group": {
+      "fields": ["hire_date", "contract_start_date"],
+      "rule": "A source column whose proposed target is in this group must NOT be auto-accepted on date-like values alone. Auto-accept only when the source header clearly disambiguates which role it is (via that target's disambiguation keywords) and the other group member is not a competing candidate. Otherwise escalate to human review."
+    },
+    "identity-safeguards": [
+      "Preserve employee_id leading zeros; never coerce identifiers to numbers.",
+      "Never split full_name into first/last automatically.",
+      "Never invent a missing required value.",
+      "Never auto-interpret an ambiguous date value or ambiguous date role.",
+      "Never fuzzy-merge two employee_ids."
+    ]
+  }
+}

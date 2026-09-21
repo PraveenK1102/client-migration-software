@@ -1,0 +1,473 @@
+# Employee target contract v2 — REPRESENTATIVE, defined by this prototype.
+#
+# This prototype defines a representative employee migration target contract as permitted by the
+# brief. It is NOT claimed to reproduce Darwinbox's proprietary production schema, and none of the
+# field keys below are "official Darwinbox IDs". The application is schema-driven: mapping,
+# validation, preparation, reconciliation, versioning and the UI all read this file (plus a
+# tenant's custom-field definitions) rather than hardcoding a field list.
+#
+# Schema boundary (four layers):
+#   1. core        — common scalar employee fields (this file: `fields`)
+#   2. collections — structured one-to-many HR entities (this file: `collections`)
+#   3. custom      — TENANT-scoped custom fields (persisted separately per tenant; see
+#                    schemas/tenants/*.yaml seeds and the custom-field proposal workflow)
+#   4. unmapped    — source data with no destination; requires an explicit ignore or a
+#                    custom-field decision (never silently discarded)
+#
+# This file is NOT a source-header dictionary: `aliases` are the few explicitly-declared,
+# unambiguous header synonyms that the deterministic rule may accept without a model call.
+version: employee.v2
+title: Employee (representative target contract v2)
+description: >-
+  Representative employee migration target contract defined by this prototype under the
+  assignment's permission. Not a reproduction of Darwinbox's proprietary production schema.
+  Core scalar fields + structured collections + tenant-scoped custom attributes.
+
+boundary:
+  core: Common scalar employee fields shared by every tenant.
+  collections: Structured one-to-many HR entities attached to an employee by its business key.
+  custom: Tenant-configured custom fields; each tenant has an independent namespace.
+  unmapped: Source columns with no destination must be explicitly ignored or turned into a tenant custom field.
+
+groups:
+  - key: identity
+    label: Identity
+  - key: employment
+    label: Employment
+  - key: organization
+    label: Organization
+  - key: contact
+    label: Contact
+
+fields:
+  # ---------------- Identity ----------------
+  - key: employee_id
+    label: Employee ID
+    group: identity
+    type: string
+    required: true
+    description: Client employee identifier. Non-empty string; preserve leading zeros; canonical identity key.
+    # Universal, tenant-agnostic abbreviations for an employee identifier (compact-matched, so
+    # "emp id" also covers EmpID / Emp_ID / Emp-ID). NOT dataset-specific tuning.
+    aliases: [employee number, employee code, staff id, emp id, emp no, emp code, emp number,
+              staff number, staff no, personnel number, personnel id]
+    disambiguation_keywords: [employee, emp, id, identifier, number, "no", code, staff, payroll]
+  - key: full_name
+    label: Full name
+    group: identity
+    type: string
+    required: true
+    description: Employee display / full name. Preserve the name as a whole; never guess first/last-name boundaries.
+    aliases: [employee name]
+    disambiguation_keywords: [full, name, fullname, employee name, display name]
+  - key: preferred_name
+    label: Preferred name
+    group: identity
+    type: string
+    description: Optional preferred / informal name.
+    aliases: [preferred name, nickname, nick name, known as]
+    disambiguation_keywords: [preferred, nickname, known]
+  - key: date_of_birth
+    label: Date of birth
+    group: identity
+    type: date
+    description: Optional. Normalized to YYYY-MM-DD. Never inferred.
+    aliases: [date of birth, dob, birth date, birthdate]
+    disambiguation_keywords: [birth, dob, born]
+  - key: gender
+    label: Gender
+    group: identity
+    type: enum
+    enum: [female, male, non_binary, undisclosed]
+    description: Optional self-declared gender; null or one of the allowed labels.
+    aliases: [gender, sex]
+    disambiguation_keywords: [gender, sex]
+    # Declared, tenant-agnostic LEXICAL value synonyms (M3C Tier-1). These are universal gender
+    # codes / fixed phrases, NOT an org-specific taxonomy translation. Case/space/hyphen/underscore
+    # equivalence is already deterministic; these cover single-letter codes and the fixed
+    # privacy phrase. Unknown values (e.g. "X") are never forced through this map.
+    value_aliases:
+      female: [F]
+      male: [M]
+      non_binary: [Non-binary, Nonbinary, NB, Genderqueer]
+      undisclosed: [Prefer not to say, Not disclosed, N/A, Undisclosed]
+  - key: nationality
+    label: Nationality
+    group: identity
+    type: string
+    description: Optional nationality / citizenship as recorded by the client.
+    aliases: [nationality, citizenship]
+    disambiguation_keywords: [nationality, citizenship, citizen]
+
+  # ---------------- Employment ----------------
+  - key: hire_date
+    label: Hire date
+    group: employment
+    type: date
+    required: true
+    description: Date employment with the company began; normalized YYYY-MM-DD.
+    aliases: [hire date, date of hire, date of joining, joining date]
+    # NOTE: disambiguation_keywords are a POLICY input, NOT part of the deterministic alias surface
+    # (alias_audit ignores them, so the frozen alias-inventory hash is unaffected). "service" /
+    # "commencement" / "appointment" are universal HR synonyms for the employment start date, added so
+    # the date-role gate recognises headers like "Service Commencement" / "Start of Service".
+    disambiguation_keywords: [hire, hired, hiring, join, joined, joining, doj, onboard, onboarding, date of joining, employment, service, commencement, commenced, appointment]
+  - key: contract_start_date
+    label: Contract start date
+    group: employment
+    type: date
+    description: Optional. Date a contract began; distinct from the employment hire date.
+    aliases: [contract start, contract start date, contract begin date]
+    disambiguation_keywords: [contract, agreement, contract start, contract begin]
+  - key: employment_type
+    label: Employment type
+    group: employment
+    type: enum
+    enum: [full_time, part_time, contractor, intern, temporary]
+    description: Optional engagement type.
+    aliases: [employment type, employee type, worker type, engagement type]
+    disambiguation_keywords: [employment, type, engagement, worker]
+  - key: employment_status
+    label: Employment status
+    group: employment
+    type: enum
+    enum: [active, on_leave, notice_period, terminated]
+    description: Optional current employment status.
+    aliases: [employment status, employee status, work status]
+    disambiguation_keywords: [status, employment, active, terminated]
+  - key: designation
+    label: Designation
+    group: employment
+    type: string
+    description: Optional job title / designation as recorded by the client.
+    aliases: [designation, job title, position title, position]
+    disambiguation_keywords: [designation, title, position, job]
+  - key: grade
+    label: Grade
+    group: employment
+    type: string
+    description: Optional job grade / band.
+    aliases: [grade, job grade, pay grade, band]
+    disambiguation_keywords: [grade, band]
+  - key: probation_end_date
+    label: Probation end date
+    group: employment
+    type: date
+    description: Optional probation completion / confirmation date.
+    aliases: [probation end date, probation end, probation completion date, confirmation date]
+    disambiguation_keywords: [probation, confirmation]
+  - key: termination_date
+    label: Termination date
+    group: employment
+    type: date
+    description: Optional last working / separation date.
+    aliases: [termination date, last working day, last working date, exit date, separation date, leaving date]
+    disambiguation_keywords: [termination, exit, separation, leaving, last working]
+  - key: notice_period_days
+    label: Notice period (days)
+    group: employment
+    type: number
+    description: Optional notice period in days (whole number).
+    aliases: [notice period days, notice period, notice period in days]
+    disambiguation_keywords: [notice, period]
+
+  # ---------------- Organization ----------------
+  - key: department
+    label: Department
+    group: organization
+    type: enum
+    enum: [Engineering, Sales, Finance, People Operations]
+    description: Optional. Null or one of the allowed departments. Casing/whitespace differences are normalized.
+    aliases: [dept, department name]
+    disambiguation_keywords: [department, dept, team, division, group, function]
+  - key: business_unit
+    label: Business unit
+    group: organization
+    type: string
+    description: Optional business unit.
+    aliases: [business unit, bu name, sbu]
+    disambiguation_keywords: [business, unit, bu]
+  - key: cost_center
+    label: Cost center
+    group: organization
+    type: string
+    description: Optional cost center code.
+    aliases: [cost center, cost centre, cost center code, cost centre code]
+    disambiguation_keywords: [cost, center, centre]
+  - key: work_location
+    label: Work location
+    group: organization
+    type: string
+    description: Optional office / work location label.
+    aliases: [work location, location, office location, office, work site, base location]
+    disambiguation_keywords: [location, office, site]
+  - key: manager_employee_id
+    label: Manager employee ID
+    group: organization
+    type: string
+    description: Optional employee_id of the reporting manager (an identifier, never a name; preserve leading zeros).
+    aliases: [manager employee id, manager id, reporting manager id, supervisor id, reports to id, manager employee number]
+    disambiguation_keywords: [manager, supervisor, reporting, reports]
+
+  # ---------------- Contact ----------------
+  - key: work_email
+    label: Work email
+    group: contact
+    type: email
+    required: true
+    description: Work email address; uniqueness enforced across employees. Never invented.
+    aliases: [work email address]
+    disambiguation_keywords: [work, email, e-mail, mail, mailid, email address]
+  - key: personal_email
+    label: Personal email
+    group: contact
+    type: email
+    description: Optional personal email address (distinct from the work email).
+    aliases: [personal email, personal email address, private email, home email, alternate email]
+    disambiguation_keywords: [personal, private, home, alternate, email]
+  - key: mobile_phone
+    label: Mobile phone
+    group: contact
+    type: phone
+    description: Optional mobile number; kept verbatim after trimming, validated for shape only.
+    aliases: [mobile phone, mobile, mobile number, cell phone, cellphone, personal mobile]
+    disambiguation_keywords: [mobile, cell, phone]
+  - key: work_phone
+    label: Work phone
+    group: contact
+    type: phone
+    description: Optional office / desk phone number.
+    aliases: [work phone, office phone, desk phone, work telephone]
+    disambiguation_keywords: [work, office, desk, phone, telephone]
+
+# Structured one-to-many HR entities. Each item is attached to an employee by the employee
+# business key (employee_id). `item_identity` is the stable identity used to collapse exact
+# duplicates, merge complementary rows and detect conflicting variants of the SAME logical item.
+# `table_aliases` let the deterministic rule recognise a relational child table / XLSX sheet by
+# its name; `indexed_column` / `multi_value_column` declare the only legacy flattened shapes the
+# deterministic rule may accept (see docs) — anything else stays unresolved for review.
+collections:
+  - key: addresses
+    label: Addresses
+    description: Postal addresses (structured, one per address type).
+    item_identity: [type]
+    table_aliases: [addresses, address, employee addresses]
+    fields:
+      - key: type
+        label: Address type
+        type: enum
+        enum: [home, mailing, permanent, work]
+        required: true
+        aliases: [address type, type]
+      - key: line1
+        label: Line 1
+        type: string
+        aliases: [address line 1, line 1, street, street address]
+      - key: line2
+        label: Line 2
+        type: string
+        aliases: [address line 2, line 2]
+      - key: city
+        label: City
+        type: string
+        aliases: [city, town]
+      - key: state
+        label: State / province
+        type: string
+        aliases: [state, province, region]
+      - key: postal_code
+        label: Postal code
+        type: string
+        aliases: [postal code, zip, zip code, pincode, pin code, postcode]
+      - key: country
+        label: Country
+        type: string
+        aliases: [country]
+  - key: emergency_contacts
+    label: Emergency contacts
+    description: People to contact in an emergency.
+    item_identity: [name]
+    table_aliases: [emergency contacts, emergency contact]
+    fields:
+      - key: name
+        label: Contact name
+        type: string
+        required: true
+        aliases: [contact name, emergency contact name, name]
+      - key: relationship
+        label: Relationship
+        type: string
+        aliases: [relationship, relation]
+      - key: phone
+        label: Phone
+        type: phone
+        aliases: [phone, contact phone, phone number, mobile, mobile number]
+      - key: email
+        label: Email
+        type: email
+        aliases: [email, contact email]
+  - key: dependents
+    label: Dependents
+    description: Family members / dependents declared by the employee.
+    item_identity: [name]
+    table_aliases: [dependents, dependants, dependent, family members]
+    fields:
+      - key: name
+        label: Dependent name
+        type: string
+        required: true
+        aliases: [dependent name, dependant name, name]
+      - key: relationship
+        label: Relationship
+        type: string
+        aliases: [relationship, relation]
+      - key: date_of_birth
+        label: Date of birth
+        type: date
+        aliases: [date of birth, dob, birth date]
+  - key: education_history
+    label: Education history
+    description: Academic qualifications, one row per qualification.
+    item_identity: [level, institution]
+    table_aliases: [education, education history, qualifications, academic history]
+    fields:
+      - key: level
+        label: Level / qualification
+        type: string
+        required: true
+        aliases: [level, qualification, degree]
+      - key: institution
+        label: Institution
+        type: string
+        aliases: [institution, school, college, university, board]
+      - key: score
+        label: Score
+        type: string
+        aliases: [score, marks, cgpa, percentage, grade]
+      - key: year
+        label: Year
+        type: number
+        aliases: [year, year of passing, passing year, completion year]
+      - key: specialization
+        label: Specialization
+        type: string
+        aliases: [specialization, specialisation, major, stream]
+  - key: vehicles
+    label: Vehicles
+    description: Vehicles registered by the employee (e.g. for parking/access).
+    item_identity: [registration_number]
+    table_aliases: [vehicles, vehicle, employee vehicles]
+    indexed_column:
+      # Legacy flattened shape: "Vehicle 1", "Vehicle 2" (or a single "Vehicle Number") columns.
+      aliases: [vehicle, vehicle number, vehicle registration, vehicle no]
+      field: registration_number
+    multi_value_column:
+      # Legacy delimited shape: "Vehicle Numbers" = "TN01AA1111; TN02BB2222". Split ONLY on the
+      # declared delimiters with explicit evidence; each item must validate.
+      aliases: [vehicle numbers, vehicle registrations, vehicle registration numbers]
+      field: registration_number
+      delimiters: [";", "|"]
+    fields:
+      - key: type
+        label: Vehicle type
+        type: enum
+        enum: [car, motorcycle, scooter, bicycle, other]
+        aliases: [vehicle type, type, kind]
+      - key: registration_number
+        label: Registration number
+        type: string
+        required: true
+        aliases: [registration number, registration, registration no, reg no, number plate, plate number, vehicle number]
+
+# Tenant-scoped custom attributes live OUTSIDE this file (per tenant, persisted separately).
+# This block only declares the contract they must satisfy and how they appear on a record.
+custom_attributes:
+  key: custom_attributes
+  label: Tenant custom attributes
+  description: >-
+    Per-tenant custom fields. Each value is identified by its definition id (never by display
+    label alone) and stored as {definition_id, key, value} on the employee record.
+  key_pattern: "^[a-z][a-z0-9_]{1,63}$"
+  allowed_types: [string, number, boolean, date, enum, multiselect]
+
+business_rules:
+  required_in_final_record: [employee_id, full_name, work_email, hire_date]
+  # M3C: schema-driven temporal constraints. Used ONLY to resolve a two-digit-year century when
+  # exactly one candidate survives (never a hidden library two-digit pivot). Date ORDER (MDY/DMY)
+  # is inferred separately from full-column evidence. `reference_date` = the run date.
+  temporal_constraints:
+    date_of_birth:
+      not_future: true
+      max_age_years: 100
+      min_age_years: 14
+    hire_date:
+      min_year: 1950
+      allow_future: false
+    contract_start_date:
+      min_year: 1950
+      allow_future: true
+    probation_end_date:
+      min_year: 1950
+      allow_future: true
+    termination_date:
+      min_year: 1950
+      allow_future: true
+  date_role_group:
+    fields: [hire_date, contract_start_date]
+    rule: >-
+      A source column whose proposed target is in this group must NOT be auto-accepted on
+      date-like values alone. Auto-accept only when the source header clearly disambiguates
+      which role it is (via that target's disambiguation keywords) and the other group member is
+      not a competing candidate. Otherwise escalate to human review.
+  # M3F §F: generic sibling / role ambiguity. A POLICY input only — NOT part of the deterministic
+  # alias surface (alias_audit ignores it, so the frozen alias-inventory hash is unaffected). Each
+  # group lists same-shape target fields that a GENERIC header cannot choose between. `generic` names
+  # the family concept words that identify the family but not the member (email/mail/phone/name/id/…);
+  # `qualifiers` names the distinctive words that DO pin a specific member (corporate/work -> work_email,
+  # personal/home -> personal_email, …). A header carrying only a `generic` family word and no member
+  # `qualifier` is escalated to human review even when the model is confident and the type corroborates
+  # — the model must not silently pick a sibling. A header with a distinctive qualifier may still
+  # auto-accept (subject to the other policy gates). These qualifiers are universal HR vocabulary, not
+  # dataset-specific tuning, and never bypass the model the way an alias would.
+  sibling_role_groups:
+    - key: email_role
+      members: [work_email, personal_email]
+      generic: [email, mail, mailbox, mailid, emailid, address, contact, e]
+      qualifiers:
+        work_email: [work, corporate, company, office, business, official, org, organisation, organization]
+        personal_email: [personal, private, home, alternate, alternative, secondary]
+    - key: phone_role
+      members: [mobile_phone, work_phone]
+      generic: [phone, telephone, tel, contact, number, mobileno, phoneno]
+      qualifiers:
+        mobile_phone: [mobile, cell, cellular, personal, whatsapp]
+        work_phone: [work, office, desk, landline, business, official, extension, ext]
+    - key: name_role
+      members: [full_name, preferred_name]
+      generic: [name, employee, person]
+      qualifiers:
+        full_name: [full, legal, display, complete, official]
+        preferred_name: [preferred, nick, nickname, known, informal, chosen, goes]
+    - key: identifier_role
+      members: [employee_id, manager_employee_id]
+      generic: [id, identifier, number, code, reference, ref, uid, key, no]
+      qualifiers:
+        employee_id: [employee, emp, staff, personnel, worker, associate, payroll, member, person]
+        manager_employee_id: [manager, supervisor, reporting, reports, superior, boss, lead, mgr]
+    - key: date_role
+      members: [hire_date, contract_start_date, date_of_birth, probation_end_date, termination_date]
+      generic: [date, start, day, effective, on, of, dt, timestamp]
+      qualifiers:
+        hire_date: [hire, hired, hiring, join, joined, joining, doj, onboard, onboarding, employment, service, commencement, commenced, appointment]
+        contract_start_date: [contract, agreement]
+        date_of_birth: [birth, dob, born, birthday]
+        probation_end_date: [probation, confirmation]
+        termination_date: [termination, terminated, exit, separation, separated, leaving, relieving, resignation, resigned, last]
+  identity_safeguards:
+    - Preserve employee_id leading zeros; never coerce identifiers to numbers.
+    - Never split full_name into first/last automatically.
+    - Never invent a missing required value.
+    - Never auto-interpret an ambiguous date value or ambiguous date role.
+    - Never fuzzy-merge two employee_ids.
+    - Never flatten collections into numbered scalar columns in the canonical record.
+    - Never create a tenant custom field without an explicit human approval.

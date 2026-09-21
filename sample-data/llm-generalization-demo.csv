@@ -1,0 +1,51 @@
+Employee Reference,Legal Display Name,Corporate Email,Joining Effective Date,Identity Sex,Lifecycle Status,Engagement Category,Org Function,Reports To Reference,Position Caption
+EMP-1001,Ava Reyes,ava.reyes@northwind-demo.example,2016-01-01,Man,Currently Employed,Permanent Staff,Product Engineering,,Software Engineer
+EMP-1002,Noah Haas,noah.haas@northwind-demo.example,2017-02-02,Does not disclose,Currently Employed,Permanent Staff,Revenue,,Sales Manager
+EMP-1003,Mia Imai,mia.imai@northwind-demo.example,2018-03-03,Woman,Currently Employed,Part Time Staff,People & Culture,,People Operations Lead
+EMP-1004,Liam Roy,liam.roy@northwind-demo.example,2019-04-04,Man,Voluntarily Exited,Permanent Staff,Product Engineering,EMP-1001,QA Engineer
+EMP-1005,Zoe Weber,zoe.weber@northwind-demo.example,2020-05-05,Does not disclose,Currently Employed,External Contractor,Revenue,EMP-1002,Account Executive
+EMP-1006,Ethan Marsh,ethan.marsh@northwind-demo.example,2021-06-06,Woman,Dismissed,Permanent Staff,People & Culture,EMP-1003,Recruiter
+EMP-1007,Aria Quill,aria.quill@northwind-demo.example,2022-07-07,Man,Currently Employed,Permanent Staff,Product Engineering,EMP-1001,Engineering Lead
+EMP-1008,Kai Udal,kai.udal@northwind-demo.example,2023-08-08,Does not disclose,Currently Employed,Permanent Staff,Revenue,EMP-1002,Account Manager
+EMP-1009,Nora Yee,nora.yee@northwind-demo.example,2024-09-09,Woman,Currently Employed,Permanent Staff,People & Culture,EMP-1003,People Partner
+EMP-1010,Leo Boone,leo.boone@northwind-demo.example,2016-10-10,Man,Currently Employed,Permanent Staff,Product Engineering,EMP-1001,Senior Software Engineer
+EMP-1011,Ivy Efron,ivy.efron@northwind-demo.example,2017-11-11,Does not disclose,Currently Employed,Part Time Staff,Revenue,EMP-1002,Solutions Consultant
+EMP-1012,Owen Hollis,owen.hollis@northwind-demo.example,2018-12-12,Woman,Currently Employed,Permanent Staff,People & Culture,EMP-1003,Talent Coordinator
+EMP-1013,Ruby Kelso,ruby.kelso@northwind-demo.example,2019-01-13,Man,Currently Employed,Permanent Staff,Product Engineering,EMP-1001,Software Engineer
+EMP-1014,Finn Nash,finn.nash@northwind-demo.example,2020-02-14,Does not disclose,Currently Employed,Permanent Staff,Revenue,EMP-1002,Sales Manager
+EMP-1015,Isla Quist,isla.quist@northwind-demo.example,2021-03-15,Woman,Currently Employed,Permanent Staff,People & Culture,EMP-1003,People Operations Lead
+EMP-1016,Max Toma,max.toma@northwind-demo.example,2022-04-16,Man,Currently Employed,External Contractor,Product Engineering,EMP-1001,QA Engineer
+EMP-1017,Lena Ward,lena.ward@northwind-demo.example,2023-05-17,Does not disclose,Currently Employed,Permanent Staff,Revenue,EMP-1002,Account Executive
+EMP-1018,Cole Novak,cole.novak@northwind-demo.example,2024-06-18,Woman,Currently Employed,Permanent Staff,People & Culture,EMP-1003,Recruiter
+EMP-1019,Maya Bauer,maya.bauer@northwind-demo.example,2016-07-19,Man,Currently Employed,Part Time Staff,Product Engineering,EMP-1001,Engineering Lead
+EMP-1020,Reid Faber,reid.faber@northwind-demo.example,2017-08-20,Does not disclose,Currently Employed,Permanent Staff,Revenue,EMP-1002,Account Manager
+EMP-1021,Tara Sato,tara.sato@northwind-demo.example,2018-09-21,Woman,Voluntarily Exited,Permanent Staff,People & Culture,EMP-1003,People Partner
+EMP-1022,Jude Kaur,jude.kaur@northwind-demo.example,2019-10-22,Man,Currently Employed,Permanent Staff,Product Engineering,EMP-1001,Senior Software Engineer
+EMP-1023,Elsa Ng,elsa.ng@northwind-demo.example,2020-11-23,Does not disclose,Currently Employed,Permanent Staff,Revenue,EMP-1002,Solutions Consultant
+EMP-1024,Rhys Serra,rhys.serra@northwind-demo.example,2021-12-24,Woman,Currently Employed,Permanent Staff,People & Culture,EMP-1003,Talent Coordinator
+EMP-1025,Nina Vega,nina.vega@northwind-demo.example,2022-01-25,Man,Dismissed,Permanent Staff,Product Engineering,EMP-1001,Software Engineer
+EMP-1026,Sean Zhao,sean.zhao@northwind-demo.example,2023-02-26,Does not disclose,Currently Employed,Permanent Staff,Revenue,EMP-1002,Sales Manager
+EMP-1027,Cleo Cira,cleo.cira@northwind-demo.example,2024-03-27,Woman,Currently Employed,Part Time Staff,People & Culture,EMP-1003,People Operations Lead
+EMP-1028,Dana Frey,dana.frey@northwind-demo.example,2016-04-01,Man,Currently Employed,Permanent Staff,Product Engineering,EMP-1001,QA Engineer
+EMP-1029,Omar Ives,omar.ives@northwind-demo.example,2017-05-02,Does not disclose,Currently Employed,Permanent Staff,Revenue,EMP-1002,Account Executive
+EMP-1030,Faye Loft,faye.loft@northwind-demo.example,2018-06-03,Woman,Currently Employed,Permanent Staff,People & Culture,EMP-1003,Recruiter
+EMP-1031,Beau Oduya,beau.oduya@northwind-demo.example,2019-07-04,Man,Currently Employed,Permanent Staff,Product Engineering,EMP-1001,Engineering Lead
+EMP-1032,Gwen Rana,gwen.rana@northwind-demo.example,2020-08-05,Does not disclose,Currently Employed,Permanent Staff,Revenue,EMP-1002,Account Manager
+EMP-1033,Hugo Ursu,hugo.ursu@northwind-demo.example,2021-09-06,Woman,Currently Employed,Permanent Staff,People & Culture,EMP-1003,People Partner
+EMP-1034,Iris Okafor,iris.okafor@northwind-demo.example,2022-10-07,Man,Currently Employed,Permanent Staff,Product Engineering,EMP-1001,Senior Software Engineer
+EMP-1035,Jack Chen,jack.chen@northwind-demo.example,2023-11-08,Does not disclose,Currently Employed,Part Time Staff,Revenue,EMP-1002,Solutions Consultant
+EMP-1036,Kira Costa,kira.costa@northwind-demo.example,2024-12-09,Woman,Currently Employed,Permanent Staff,People & Culture,EMP-1003,Talent Coordinator
+EMP-1037,Luca Dahl,luca.dahl@northwind-demo.example,2016-01-10,Man,Currently Employed,Permanent Staff,Product Engineering,EMP-1001,Software Engineer
+EMP-1038,Moss Vance,moss.vance@northwind-demo.example,2017-02-11,Does not disclose,Voluntarily Exited,External Contractor,Revenue,EMP-1002,Sales Manager
+EMP-1039,Neil Lund,neil.lund@northwind-demo.example,2018-03-12,Woman,Currently Employed,Permanent Staff,People & Culture,EMP-1003,People Operations Lead
+EMP-1040,Opal Pace,opal.pace@northwind-demo.example,2019-04-13,Man,Currently Employed,Permanent Staff,Product Engineering,EMP-1001,QA Engineer
+EMP-1041,Pia Tanaka,pia.tanaka@northwind-demo.example,2020-05-14,Does not disclose,Currently Employed,Permanent Staff,Revenue,EMP-1002,Account Executive
+EMP-1042,Quin Wren,quin.wren@northwind-demo.example,2021-06-15,Woman,Currently Employed,Permanent Staff,People & Culture,EMP-1003,Recruiter
+EMP-1043,Rory Ashby,rory.ashby@northwind-demo.example,2022-07-16,Man,Currently Employed,Part Time Staff,Product Engineering,EMP-1001,Engineering Lead
+EMP-1044,Sana Doria,sana.doria@northwind-demo.example,2023-08-17,Does not disclose,Dismissed,Permanent Staff,Revenue,EMP-1002,Account Manager
+EMP-1045,Theo Gomez,theo.gomez@northwind-demo.example,2024-09-18,Woman,Currently Employed,Permanent Staff,People & Culture,EMP-1003,People Partner
+EMP-1046,Uma Jansen,uma.jansen@northwind-demo.example,2016-10-19,Man,Currently Employed,Permanent Staff,Product Engineering,EMP-1001,Senior Software Engineer
+EMP-1047,Vera Mora,vera.mora@northwind-demo.example,2017-11-20,Does not disclose,Currently Employed,Permanent Staff,Revenue,EMP-1002,Solutions Consultant
+EMP-1048,Wade Prasad,wade.prasad@northwind-demo.example,2018-12-21,Woman,Currently Employed,Permanent Staff,People & Culture,EMP-1003,Talent Coordinator
+EMP-1049,Xena Solis,xena.solis@northwind-demo.example,2019-01-22,Man,Currently Employed,External Contractor,Product Engineering,EMP-1001,Software Engineer
+EMP-1050,Yara Volk,yara.volk@northwind-demo.example,2020-02-23,Does not disclose,Currently Employed,Permanent Staff,Revenue,EMP-1002,Sales Manager
